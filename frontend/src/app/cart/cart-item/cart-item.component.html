@@ -1,0 +1,13 @@
+
+<div class="list-group-item clearfix" >
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ cartItem.name }}</h4>
+        <!-- <p class="list-group-item-text">Amount: {{ cartItem.amount }}</p> -->
+        <p class="list-group-item-text"> Amount:
+            <input type = "number" min = "1" [(ngModel)]="cartItem.amount">
+        </p>
+    </div>
+    <span class="pull-right">
+      <button type="button" class="btn btn-primary" (click)="remove()">Remove</button>
+    </span>
+</div>

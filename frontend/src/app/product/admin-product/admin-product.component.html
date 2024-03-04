@@ -1,0 +1,17 @@
+<div *ngIf="products.length > 0; else noProducts">
+
+    <a routerLink="/newProduct">Add New Product</a>
+
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <app-admin-product-item *ngFor="let productEl of products" [product]="productEl"></app-admin-product-item>
+        </div>
+    </div>
+
+</div>
+
+
+<ng-template #noProducts>
+    <p>No products available.</p>
+</ng-template>

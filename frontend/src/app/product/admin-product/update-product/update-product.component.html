@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()" #adminProductForm="ngForm">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="model.name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" [(ngModel)]="model.quantity" name="quantity" #quantity="ngModel" min="0"
+            required>
+        <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="error">
+            <div *ngIf="quantity.errors?.required">Quantity is required.</div>
+            <div *ngIf="quantity.errors?.min">Quantity must be greater than 0.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" id="description" [(ngModel)]="model.description" name="description" required>
+    </div>
+    <div>
+        <label for="retail_price">Retail Price:</label>
+        <input type="number" id="retail_price" [(ngModel)]="model.retailPrice" name="retail_price" #retailPrice="ngModel" min="0.01" required>
+        <div *ngIf="retailPrice.invalid && (retailPrice.dirty || retailPrice.touched)" class="error">
+          <div *ngIf="retailPrice.errors?.required">Retail price is required.</div>
+          <div *ngIf="retailPrice.errors?.min">Retail price must be greater than 0.</div>
+        </div>
+      </div>
+    
+      <div>
+        <label for="wholesale_price">Wholesale Price:</label>
+        <input type="number" id="wholesale_price" [(ngModel)]="model.wholesalePrice" name="wholesale_price" #wholesalePrice="ngModel" min="0.01" required>
+        <div *ngIf="wholesalePrice.invalid && (wholesalePrice.dirty || wholesalePrice.touched)" class="error">
+          <div *ngIf="wholesalePrice.errors?.required">Wholesale price is required.</div>
+          <div *ngIf="wholesalePrice.errors?.min">Wholesale price must be greater than 0.</div>
+        </div>
+      </div>
+    <button class="submit" class="btn btn-primary" [disabled]="!adminProductForm.form.valid">Submit</button>
+
+
+</form>

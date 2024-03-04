@@ -1,0 +1,17 @@
+
+<div class="list-group-item clearfix" >
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ product.product_id }}: {{product.name}}</h4>
+        <p class="list-group-item-text" *ngIf="this.showDetail">Quantity: {{ product.quantity }}</p>
+        <p class="list-group-item-text" *ngIf="this.showDetail">Retail Price: {{ product.retail_price }}</p>
+        <p class="list-group-item-text" *ngIf="this.showDetail">Wholesale Price: {{ product.wholesale_price }}</p>
+        <p class="list-group-item-text" *ngIf="this.showDetail">Description: {{ product.description }}</p>
+    </div>
+    <span class="pull-right">
+      
+      <button type="button" class="btn btn-primary" (click)="detailStatus()">Detail</button>
+      <button type="button" class="btn btn-primary" (click)="updateProduct()">Update</button>
+      
+    </span>
+
+</div>

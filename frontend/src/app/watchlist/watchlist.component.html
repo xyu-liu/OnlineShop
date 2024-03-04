@@ -1,0 +1,15 @@
+<div *ngIf="products.length > 0; else noProducts">
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <app-watchlist-item *ngFor="let productEl of products" [product]="productEl" (watchlistChanged)="reload()"></app-watchlist-item>
+        </div>
+    </div>
+
+</div>
+
+
+<ng-template #noProducts>
+    <p>Your WatchList is Empty</p>
+</ng-template>

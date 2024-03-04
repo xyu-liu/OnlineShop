@@ -1,0 +1,11 @@
+<a class="list-group-item clearfix" (click)="detailStatus()">
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ product.name }}</h4>
+        <p class="list-group-item-text">Price: {{ product.price }}</p>
+        <p class="list-group-item-text" *ngIf="this.showDetail">Detail: {{ product.description }}</p>
+    </div>
+    <span class="pull-right">
+      <button type="button" class="btn btn-primary" (click)="remove()">Remove from WatchList</button>
+    </span>
+
+</a>

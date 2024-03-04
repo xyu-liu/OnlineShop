@@ -1,0 +1,21 @@
+<div *ngIf="products.length > 0; else noProducts">
+    <!-- <ul>
+        <li *ngFor="let product of products">
+            <h3>{{ product.name }} - ${{ product.price }}</h3>
+            <p>{{ product.description }}</p>
+        </li>
+    </ul> -->
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <app-user-product-item *ngFor="let productEl of products" [product]="productEl"></app-user-product-item>
+        </div>
+    </div>
+
+</div>
+
+
+<ng-template #noProducts>
+    <p>No products available.</p>
+</ng-template>

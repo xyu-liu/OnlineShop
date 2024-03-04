@@ -1,0 +1,15 @@
+
+<h1>Top 3 Frequently Bought Products</h1>
+<div class="row">
+    <div class="col-xs-12">
+        <app-user-product-item *ngFor="let productEl of this.frequentProducts" [product]="productEl"></app-user-product-item>
+    </div>
+</div>
+
+
+<h1>Top 3 Recently Bought Products</h1>
+<div class="row">
+    <div class="col-xs-12">
+        <app-user-product-item *ngFor="let productEl of this.recentProducts" [product]="productEl"></app-user-product-item>
+    </div>
+</div>

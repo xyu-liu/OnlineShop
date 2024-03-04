@@ -1,0 +1,16 @@
+<a class="list-group-item clearfix">
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ order.order_id }}</h4>
+        <p class="list-group-item-text">Date Placed: {{ order.date_placed }}</p>
+        <p class="list-group-item-text">Order Status: {{ order.order_status }}</p>
+        <p class="list-group-item-text" *ngIf="this.isDetailed">Detail: {{ this.detail }}</p>
+    </div>
+    <span class="pull-right">
+      
+      <button type="button" class="btn btn-primary" (click)="showDetail()" >Show Detail</button>
+      <button type="button" class="btn btn-primary" (click)="cancelOrder()" *ngIf="this.order.order_status === 'Processing'">Cancel Order</button>
+      <button type="button" class="btn btn-primary" (click)="completeOrder()" *ngIf="this.order.order_status === 'Processing' && this.isAdmin">Complete Order</button>
+      
+    </span>
+
+</a>
